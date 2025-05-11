@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://fiddle.jshell.net/_display/?editor_console=true -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Magic Quiz WEBMIDDLE hakaton Fantasy</title>
+    
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <script type="text/javascript" src="./dummy.js.download"></script>
+
+
+
+    <style id="compiled-css" type="text/css">
+      header img {
+    position:absolute;
+    top:20px;
+    left:20px;
+}
+header h1 {
+   margin-left:170px;
+}
+p {
+    color:white;
+    margin-top:10px;
+    font-size:20px;
+    font-family:cursive;
+   
+}
+main img {
+    width:500px;
+    height:500px;
+    margin:60px;
+    position:relative;
+    left:70px;
+}
+header {
+    display:flex;
+}
+h2 {
+    font-size:60px;
+    text-align:center;
+    font-family:cursive;
+    background:rgba(169, 162, 191, 1);
+    font-style: oblique;
+    font-weight:200;
+    color:white;
+}
+ section a {
+    font-size:30px;
+    background:rgba(46, 32, 88, 1);
+    font-family:cursive;
+    text-decoration:none;
+    color:black;
+    justify-content:center;
+    
+    padding-left:60px;
+    padding-right:60px;
+    margin-left:130px;
+    max-width:40px;
+}
+section a:hover {
+ border:4px solid rgb(224, 194, 255);
+ color: rgb(224, 194, 255);
+}
+section a:focus {
+ border:4px solid rgb(33, 5, 60);
+ color:rgb(33, 5, 60);
+}
+
+
+      /* EOS */
+    </style>
+
+    <style type="text/css">
+      :root {
+        color-scheme: light;
+      }
+    </style>
+
+    <script id="insert"></script>
+
+      <script src="./stringify.js.download" charset="utf-8"></script>
+      <script>
+        const customConsole = (w) => {
+          const pushToConsole = (payload, type) => {
+            w.parent.postMessage({
+              console: {
+                payload: stringify(payload),
+                type:    type
+              }
+            }, "*")
+          }
+
+          w.onerror = (message, url, line, column) => {
+            // IMPORTANT: the line needs to correspond with the REF:LINE
+            // unfortunately this number needs to be altered every time this view is changed
+            line = line - 117
+            if (line < 0){
+              pushToConsole(message, "error")
+            } else {
+              pushToConsole(`[Line ${line}] ${message}`, "error")
+              // pushToConsole(`[${line}:${column}] ${message}`, "error")
+            }
+          }
+
+          let console = (function(systemConsole){
+            return {
+              log: function(){
+                let args = Array.from(arguments)
+                pushToConsole(args, "log")
+                systemConsole.log.apply(this, args)
+              },
+              info: function(){
+                let args = Array.from(arguments)
+                pushToConsole(args, "info")
+                systemConsole.info.apply(this, args)
+              },
+              warn: function(){
+                let args = Array.from(arguments)
+                pushToConsole(args, "warn")
+                systemConsole.warn.apply(this, args)
+              },
+              error: function(){
+                let args = Array.from(arguments) // REF:LINE
+                pushToConsole(args, "error")
+                systemConsole.error.apply(this, args)
+              },
+              system: function(arg){
+                pushToConsole(arg, "system")
+              },
+              clear: function(){
+                systemConsole.clear.apply(this, {})
+              },
+              time: function(){
+                let args = Array.from(arguments)
+                systemConsole.time.apply(this, args)
+              },
+              assert: function(assertion, label){
+                if (!assertion){
+                  pushToConsole(label, "log")
+                }
+
+                let args = Array.from(arguments)
+                systemConsole.assert.apply(this, args)
+              }
+            }
+          }(window.console))
+
+          window.console = { ...window.console, ...console }
+
+          console.system("Running fiddle")
+        }
+
+        if (window.parent){
+          customConsole(window)
+        }
+      </script>
+  </head>
+  <body style="background:rgba(92, 80, 132, 1)">
+    
+    
+    <header style="background:rgba(125, 115, 158, 1)">
+        <img src="./pngtree-yellow-star-3d-icon-png-image_6511591.png" width="70px" height="70px" style="margin:20px; position:absolute;top:20px; left:20px;">
+        <h1 id="sosiska" style="font-family:Irish Grover;font-size:60px;color:white">MAGIC QUIZ</h1>
+        <img src="./pngtree-yellow-star-3d-icon-png-image_6511591.png" width="70px" height="70px" style="margin-left:590px;margin-top:20px">
+    </header>
+    
+    <main>
+        <p>Ви опинилися у магічній країні снів та спогадів.
+Добрий маг перед тим як відпустити вас у відкритий
+світ мрій дав вам карту країни . Ваша ціль навчитися
+магії та стати най сильнішим магом в історії.
+Куди вам відправится? </p>
+    <img src="./1_10-strana-oz.jpg">
+    <nav class="stels">
+    <a href="https://fiddle.jshell.net/_display/?editor_console=true#forest" style="font-family:cursive;background:red;border-radius:20px;font-size:20px;position:absolute;text-decoration:none;color:black;top:580px;right:400px;opacity:1;">ліс орків</a>
+    </nav>
+    <section id="forest" class="fr">
+     <h2 style="margin-top:1000px">Ліс орків</h2>
+     <p>Ви знаходитесь в лісі наповненим орками , вони
+на вас напали , що будите робити?</p>
+    <img src="./1000_F_989082778_h5EivMoavsqph0gDc8UORv7IFadKB2hD.jpg" width="900px">
+    <nav>
+        <a href="https://fiddle.jshell.net/_display/?editor_console=true#oops">збігу</a>
+    </nav>
+    <br>
+    <nav>
+        <a href="https://fiddle.jshell.net/_display/?editor_console=true#ew">спробую використати магію</a>
+    </nav>
+    <br>
+    <nav>
+        <a href="https://fiddle.jshell.net/_display/?editor_console=true#yeah">закричю</a>
+    </nav>
+    <br>
+    <h2 class="cool" style="margin-top:1000px" id="oops">
+    
+    Упс!</h2>
+    <p>Ви намагалися втекти від орків , але вони були 
+швидче ніж ви тож вони вас догнали і змусили 
+робити сокири у в'язниці до вашої смерті.</p>
+<img src="./cf093e5078ea11ee8897d20dae950626_upscaled">
+<nav>
+        <a href="https://fiddle.jshell.net/_display/?editor_console=true#forest">почати спочатку?</a>
+    </nav>
+    <h2 class="cool" style="margin-top:1000px" id="ew">
+    
+    Упс!</h2>
+    <p>Ви спробували використати темну магію і зупинити 
+час але переплутали заклинання і перетворили себе 
+на корову.</p>
+<img src="./cow-2896329_1280.jpg">
+<nav>
+        <a href="https://fiddle.jshell.net/_display/?editor_console=true#forest">почати спочатку?</a>
+    </nav>
+     <h2 class="cool" style="margin-top:1000px" id="yeah">
+    
+   Вдача!</h2>
+    <p>Ви закричали на все село і добрий лісоруб вас почув 
+і врятував.Він вас провів у село і дозволив 
+залишитись у нього вдома а сам пішов у ліс.</p>
+<img src="./istockphoto-537259774-612x612.jpg">
+<nav>
+        <a href="https://fiddle.jshell.net/_display/?editor_console=true#next">продовжувати?</a>
+    </nav>
+     <section id="next" class="fr">
+     <h2 style="margin-top:1000px">Незнайомець</h2>
+     <p>Вам стучать в вікно.Ви його відкриваєте і бачите 
+сильного мага у костюмі чарівника,ви підете з ним
+чи залишитесь вдома?</p>
+    <img src="./istockphoto-1373255503-612x612.jpg" width="900px">
+    <nav>
+        <a href="https://fiddle.jshell.net/_display/?editor_console=true#no">Пійду з ним</a>
+    </nav>
+    <br>
+    <nav>
+        <a href="https://fiddle.jshell.net/_display/?editor_console=true#yes">залишусь вдома</a>
+    </nav>
+    <h2 class="cool" style="margin-top:1000px" id="yes">
+    
+   Вдача!</h2>
+    <p>Незнайомець був сталкером який хотів вас вкрасти ,
+але ви відмовили йому і хлопнули вікном.
+Через декілка років лісоруб вас почав навчати 
+магії , і хоча ви не були най сильнішим магом ,
+зато були най добрішим.</p>
+<img src="./50febed961c811ee8eceb646b2a0ffc1_upscaled">
+<nav>
+        <a href="https://fiddle.jshell.net/_display/?editor_console=true#sosiska">Закінчити подорож</a>
+    </nav>
+    <h2 class="cool" style="margin-top:1000px" id="no">
+    
+    Упс!</h2>
+    <p>Насправді маг був сталкером який викрадав новачків
+,він вас відправив в Китай де вас змусили робити
+одяг на фабриці до кінця вашого життя.</p>
+<img src="./9734_large.jpg">
+<nav>
+        <a href="https://fiddle.jshell.net/_display/?editor_console=true#forest">почати спочатку?</a>
+    </nav>
+     </section>
+    </section>
+    </main>
+<script defer="" src="./vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;93e34365aae2cbd7&quot;,&quot;version&quot;:&quot;2025.4.0-1-g37f21b1&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;95d4af946c9a4d229ea725f950960b54&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}}}" crossorigin="anonymous"></script>
+
+  
+
+    <script type="text/javascript">
+
+  </script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: ""
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+
+  <script>
+    const allLines = []
+    const cssElement = document.querySelector("#compiled-css")
+
+    window.addEventListener("message", (message) => {
+        if (message.data.console){
+          let insert = document.querySelector("#insert")
+          allLines.push(message.data.console.payload)
+          insert.innerHTML = allLines.join(";\r")
+
+          let result = eval.call(null, message.data.console.payload)
+          if (result !== undefined){
+            console.log(result)
+          }
+        }
+
+      if (message.data.css){
+        cssElement.textContent = message.data.css.payload
+      }
+
+      if (message.data.html){
+        document.body.innerHTML = message.data.html.payload
+      }
+    })
+
+    if (window.parent){
+      window.parent.postMessage({loaded: true}, "*")
+    }
+  </script>
+</body></html>
